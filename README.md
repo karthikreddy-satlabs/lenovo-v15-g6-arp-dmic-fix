@@ -65,8 +65,8 @@ other build artifacts stay inside `src/` and are not tracked by git.
 ## Quick start
 
 ```bash
-git clone https://github.com/<you>/acp6x-dmic-fix.git
-cd acp6x-dmic-fix
+git clone https://github.com/karthikreddy-satlabs/omarchy-microphone-fix.git
+cd omarchy-microphone-fix
 ./install.sh
 ```
 
