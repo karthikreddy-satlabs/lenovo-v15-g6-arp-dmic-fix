@@ -5,6 +5,10 @@ quirk for the **Lenovo V15 G6 ARP**, machine model `83V4`. Without this patch,
 the laptop's internal digital microphone (DMIC) is invisible to ALSA/PipeWire
 and appears silent, while headset mics keep working.
 
+> **Distro-agnostic.** Nothing here is specific to Omarchy/Arch — the patched
+> module and scripts work on any Linux distribution with kernel headers and
+> build tools. Omarchy is simply where it was developed and tested.
+
 ## Why
 
 On this model the internal mic is a digital mic wired to the **AMD ACP6x**
@@ -56,6 +60,7 @@ other build artifacts stay inside `src/` and are not tracked by git.
 - Linux kernel headers for the kernel you're running:
   - Arch/CachyOS/Omarchy: `sudo pacman -S linux-headers` (or `linux-<version>-headers`)
   - Debian/Ubuntu: `sudo apt install linux-headers-$(uname -r)`
+  - Fedora: `sudo dnf install kernel-devel kernel-headers`
 - `base-devel` / `build-essential` (make, gcc, etc.) and `curl`
 
 > **Check your model first.** If `dmidecode` prints `83UU`, an upstream kernel
