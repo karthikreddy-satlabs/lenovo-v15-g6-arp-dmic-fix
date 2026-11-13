@@ -74,8 +74,8 @@ other build artifacts stay inside `src/` and are not tracked by git.
 ## Quick start
 
 ```bash
-git clone https://github.com/karthikreddy-satlabs/omarchy-microphone-fix.git
-cd omarchy-microphone-fix
+git clone https://github.com/karthikreddy-satlabs/lenovo-v15-g6-arp-dmic-fix.git
+cd lenovo-v15-g6-arp-dmic-fix
 ./install.sh
 ```
 
