@@ -14,7 +14,7 @@ listed in its DMI quirk table. The `83V4` model was not in the table (as of
 kernel 7.2.x), so no capture card was ever created and the only "internal mic"
 shown was a dead analog pin on the codec — always silence.
 
-This repo patches the quirk table with:
+This repo patches the quirk table in `src/acp6x-mach.c` with:
 
 ```c
 {
@@ -31,14 +31,23 @@ This repo patches the quirk table with:
 > machine model `83UU` only. The `83V4` variant still needs this local patch
 > until someone submits `83V4` to the mainline quirk table.
 
-## What's included
+## Repository layout
 
-| File | Purpose |
-|---|---|
-| `acp6x-mach.c` | Patched machine driver (contains the `83V4` quirk) |
-| `acp6x.h`, `acp6x_chip_offset_byte.h` | Headers from the upstream `sound/soc/amd/yc` directory |
-| `Makefile` | Out-of-tree kbuild file |
-| `install.sh` | Build + install helper (see below) |
+```
+.
+├── src/
+│   ├── acp6x-mach.c                 # Patched machine driver (contains the 83V4 quirk)
+│   ├── acp6x.h                      # Headers from the upstream sound/soc/amd/yc directory
+│   ├── acp6x_chip_offset_byte.h     #
+│   └── Makefile                     # Out-of-tree kbuild file
+├── install.sh                       # Build + install helper
+├── uninstall.sh                     # Restore the distro-packaged driver
+├── LICENSE
+└── README.md
+```
+
+The module builds against your installed kernel headers; the `.ko` output and
+other build artifacts stay inside `src/` and are not tracked by git.
 
 ## Requirements
 

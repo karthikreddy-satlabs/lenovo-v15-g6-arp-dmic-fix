@@ -34,7 +34,8 @@ if [ ! -d "$B" ]; then
     exit 1
 fi
 
-cd "$(dirname "$0")"
+SRC_DIR="$(cd "$(dirname "$0")" && pwd)/src"
+cd "$SRC_DIR"
 
 # When building for a kernel other than the running one, refresh the sources
 # from kernel.org so the module matches that kernel's version of the driver.
