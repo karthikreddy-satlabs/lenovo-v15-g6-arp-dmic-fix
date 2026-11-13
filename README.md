@@ -5,9 +5,13 @@ quirk for the **Lenovo V15 G6 ARP**, machine model `83V4`. Without this patch,
 the laptop's internal digital microphone (DMIC) is invisible to ALSA/PipeWire
 and appears silent, while headset mics keep working.
 
-> **Distro-agnostic.** Nothing here is specific to Omarchy/Arch — the patched
-> module and scripts work on any Linux distribution with kernel headers and
-> build tools. Omarchy is simply where it was developed and tested.
+> **Distro-agnostic, Linux-only.** Nothing here is specific to
+> Omarchy/Arch — the patched module and scripts work on any Linux distribution
+> with kernel headers and build tools. Omarchy is simply where it was
+> developed and tested. It is, however, a **Linux kernel module**, so it has no
+> bearing on other operating systems: on Windows the internal mic works out of
+> the box with the vendor driver — this repo only fixes the Linux driver's
+> missing quirk-table entry.
 
 ## Why
 
